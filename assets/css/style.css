@@ -1,0 +1,144 @@
+body{
+	padding-top: 70px;
+	/*background: url(https://pokemongolive.com/img/posts/gobirthday.jpg);*/
+	background-size:cover;
+	background-position: center;
+	color:white;
+
+}
+html{
+	height:100%;
+}
+.content{
+	text-align:center;
+	text-shadow:0px 4px 10px rgba(0,0,0,4),
+				0px 8px 40px rgba(0,0,0,1),
+				0px 18px 25px rgba(0,0,0,1);
+}
+
+.navbar-inverse{
+	background: #add8e6;
+}
+.navbar-inverse .navbar-brand{
+	color:rgb(111, 119, 132);
+}
+.navbar-inverse .navbar-na >li>a{
+	color:white;
+}
+hr {
+    width: 400px;
+    border-top: 1px solid #f8f8f8;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+h1{
+	color:white;
+	font-weight: 700;
+	font-size:5em;
+}
+
+.cont-home{
+	padding-top: 25%;
+	display: block;
+	position: absolute;
+	top: 0vh;
+	height: 100vh;
+	width: 100vw;
+	background: url(https://pokemongolive.com/img/posts/gobirthday.jpg);
+	background-position: center;
+	background-size: cover;
+}
+
+.cont-about{
+	padding-top: 30%;
+	display: none;
+	position: absolute;
+	top: 0vh;
+	height: 100vh;
+	width: 100vw;
+	background: url(http://cdn.playbuzz.com/cdn/35d17a2d-4ea8-4955-8b3d-0486b7d5632a/9b4893ff-0162-4503-8b86-38e2ff8a8647.jpg);
+	background-position: center;
+	background-size: cover;
+}
+
+.cont-search{
+	display: none;
+	position: absolute;
+	top: 0vh;
+	height: 100vh;
+	width: 100vw;
+	background: url(http://moheban-ahlebeit.com/images/Pokemon-Wallpaper-2560X1440/Pokemon-Wallpaper-2560X1440-7.jpg);
+	background-position: center;
+	background-size: cover;
+}
+
+#inputHelpBlock {
+	max-width: 600px;
+	width: 80%;
+	margin: auto;
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2), 
+				0px 8px 13px rgba(0, 0, 0, 0.4);
+}
+
+#helpBlock {
+	text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 
+				 0px 8px 13px rgba(0, 0, 0, 1);
+	color: white;
+
+}
+
+#searchText {
+	margin-top: 150px;
+}
+
+#search-area {
+	padding-top: 0;
+	margin-top: 20px;
+	margin-bottom: 100px;
+}
+
+.btn {
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2), 
+				0px 8px 13px rgba(0, 0, 0, 0.4);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    /*background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 10%; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    color: #000000;
+}
+
+#modalPokemon {
+	text-align: center;
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

@@ -1,0 +1,44 @@
+<!--navbar code -->
+	<!--navbar inverse is type and navbar-fixed-top keeps the navbar fixed even when scrolling down-->
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container"><!-- we use container over the elements and not the nav bar as a whole only to keep the options from not sticking on the sides of the screen-->
+			<div class="navbar-header"> <!-- 1 -->
+        <!--used to create to a toggle button once the screen size reduces -->
+        <!-- data target is the same in the button the div id responsible for the collapse -->
+				 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo" aria-expanded="false">
+			        <span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			    </button>
+				<a href="#" class="navbar-brand" style="pointer-events: none;">PokeHunterz</a>
+			</div>
+			<!-- collapses the option when screensize is reduced to a certain threshold -->
+			<div class="collapse navbar-collapse" id="bs-nav-demo"> <!--We put this class over the items we want to collapse --> <!--         2   -->
+				<ul class="nav navbar-nav"> <!--all options on the left -->
+					<li class="activated" id="home-tab"><a href="/">Home</a></li>
+					<li id="search-tab"><a href="/pokedex">Pokedex</a></li>
+					<%if(!currentUser){ %>
+						<li style="cursor: not-allowed;" id="wild-tab"><a class="inactive" href="/wilderness">Wilderness</a></li>
+					    <li style="cursor: not-allowed;" id="messages-tab"><a class="inactive" href="/messages">Messages</a></li>
+					    <li style="cursor: not-allowed;" id="collection-tab"><a class="inactive" href="/collection">My Collection</a></li>
+					<% } else { %>
+						<li id="wild-tab"><a href="/wilderness">Wilderness</a></li>
+					    <li id="messages-tab"><a class="active" href="/messages">Messages</a></li>
+					    <li id="collection-tab"><a class="active" href="/collection">My Collection</a></li>
+					<% } %>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+				<!-- all options on the right -->
+				    <%if(!currentUser){ %>
+                        <li id="login-tab"><a class="active" href="/login">Login <i class="fa fa-user"></i></a></li>
+                        <li id="register-tab"><a class="active" href="/register">Sign Up <i class="fa fa-user-plus"></i></a></li>
+                    <% } else { %>
+                        <li><a class="active" class="inactive" href="#">Signed In As <%= currentUser.username %></a></li>
+                        <li><a class="active" href="/logout">Logout</a></li>
+                    <% } %>
+ 
+				</ul>
+			</div>
+		</div>
+	</nav>

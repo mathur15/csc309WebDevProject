@@ -1,0 +1,25 @@
+<% include partials/header %> 
+
+<body onload="activateRegister();">
+    
+<!--
+	This is the registration page. the user will have to type in their username and password which will be passed to the server for authentication.
+	If the server authenticates the user, it will take them to the landing page.
+-->
+    
+    <% include partials/nav %>
+    
+    <div id = "login_div">
+        <div id = "login_div_mini">
+            <h1 style = "align-items: centered; text-align:center;">Sign Up!</h1>
+            <form action="/register" method="POST" style = "align-items: centered; text-align:center;" >
+                <input class="form-control" id = "username_in" type="text" name="username" placeholder="username">
+                <br>
+                <input class="form-control" id = "password_in" type="password" name="password" placeholder="password">
+                <br>
+                <input class="btn btn-dark btn-lg active" id = "signup_btn" type="submit" value="Sign Up!">
+            </form>
+        </div>
+    </div>
+    
+<% include partials/footer %>

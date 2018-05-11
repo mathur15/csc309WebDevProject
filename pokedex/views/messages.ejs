@@ -1,0 +1,18 @@
+<!--
+This page is meant to view all of the messages stored in the database on the server. This page is only meant to be seen by those that have
+logged in. The page is pretty empty right now but the js file '/js/messages.js' will generate all of the DOM elements containing the messages.
+-->
+
+<% include partials/header %>
+	<body id = "body" onload = "activateMessages(); getMessages(); startInterval();">
+	
+	<% include partials/nav %>
+	
+	<div id = "notif_bar" class="alert alert-danger alert-dismissable" style= "display: none;">
+    	<a id = "notif_close" class="close" style = "right: 1vw;" onclick = "closeNotif();" >×</a>
+    	Alert Goes Here
+  	</div>
+	
+<script type="text/javascript" src="/js/messages.js"> </script>
+
+<% include partials/footer %>

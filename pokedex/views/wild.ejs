@@ -1,0 +1,47 @@
+<% include partials/header %>
+	<body onload = "activateWild(); getWildPokemon(); startInterval();" >
+	
+	<% include partials/nav %>
+	
+	<!-- Wild tab -->
+	<div class = "cont-wild container">
+		<div class = "row">
+			<div class="col-xs-1"></div>
+			<div class = "col-xs-10">
+				<div id="wildPokemonContainer">
+					<form id="pokemonForm">
+						<img onclick=clickPokemon() id="wildPokemon">
+						<input type="hidden" name="ID">
+					</form>
+				
+				</div>
+			</div>
+			<div class="col-xs-1"></div>
+		</div>
+	</div>
+	
+	<div id="myModal" class="modal">
+		<div class="modal-content">
+			<div class="modal-header">
+				<span class="close" onclick="closeModal()">&times;</span>
+				<h2 id="catch"></h2>
+			</div>
+			<!--display the pokemon-->
+			<div class="modal-body">
+				<p>Come back in a few minutes to catch another wild pokemon!</p>
+			</div>
+			<!--move to the next or previous pokemon -->
+			<div class="modal-footer">
+	
+			</div>
+		</div>
+	</div>
+	
+	<div id = "notif_bar" class="alert alert-danger alert-dismissable" style= "display: none;">
+    	<a id = "notif_close" class="close" style = "right: 1vw;" onclick = "closeNotif();" >×</a>
+    	Alert Goes Here
+  	</div>
+	
+<script type="text/javascript" src="/js/wild.js"></script>
+    
+<% include partials/footer %>

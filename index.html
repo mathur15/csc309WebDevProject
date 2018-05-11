@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pokedex</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+<!--navbar code -->
+<!--navbar inverse is type and navbar-fixed-top keeps the navbar fixed even when scrolling down-->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container"><!-- we use container over the elements and not the nav bar as a whole only to keep the options from not sticking on the sides of the screen-->
+			<div class="navbar-header"> <!-- 1 -->
+        <!--used to create to a toggle button once the screen size reduces -->
+        <!-- data target is the same in the button the div id responsible for the collapse -->
+				 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+				<a href="#" class="navbar-brand" style="pointer-events: none;">Pokedex</a>
+			</div>
+      <!-- collapses the option when screensize is reduced to a certain threshold -->
+			<div class="collapse navbar-collapse" id="bs-nav-demo"> <!--We put this class over the items we want to collapse --> <!--         2   -->
+				<ul class="nav navbar-nav"> <!--all options on the left -->
+					<li id="home-tab" class = "active" style="pointer-events: none;"><a href="#" onclick="clickHome()">Home</a></li>
+					<li id="search-tab"><a href="#" onclick="clickSearch()">Search</a></li>
+					<li id="about-tab"><a href="#" onclick="clickAbout()">About</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+				<!-- all options on the right -->
+					<li><a href="#">Sign in <i class="fa fa-user-plus"></i></a></li></a></li>
+					<li><a href="#">Login <i class="fa fa-user"></i></a></li>
+				</ul>
+			</div>
+		</div>
+</nav>
+
+<!--Home tab -->
+<div class = "cont-home container">
+	<div class = "row">
+		<div class ="col-lg-12">
+			<div class = "content">
+				<h1>Pokedex</h1>
+				<h3>Gotta Catch 'em all!</h3>
+				<hr>
+				<button class = "btn btn-default btn-lg" onclick="clickSearch()">Get started</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--About tab-->
+<div class = "cont-about container" >
+	<div class = "row">
+		<div class ="col-lg-12">
+			<div class = "content">
+				<h1>About</h1>
+				<h3><strong>This is a easy to use pokedex for all your trainer needs.</strong></h3>
+				<hr>
+				<button class = "btn btn-default btn-lg" onclick="clickSearch()">Get started</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--Search tab -->
+<div class = "cont-search container">
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="content">
+				<div id="searchText">
+					<h1>Search</h1>
+					<h3>Find out more about your favourite pokemon</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class = "row">
+		<div class ="col-lg-12">
+			<div class = "content">
+				<!-- HTML related to the search bar area -->
+				<div id="search-area">
+					<input type="text" id="inputHelpBlock" placeholder="Pokemon" class="form-control" aria-describedby="helpBlock">
+					<span id="helpBlock" class="help-block">Enter a Pokemon Name or ID</span>
+					<button class = "btn btn-default btn-lg"  data-toggle="modal" onclick="lookupPokemon()">Search</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--search result box -->
+<div id="myModal" class="modal">
+	<div class="modal-content">
+		<div class="modal-header">
+			<span class="close" onclick="closeModal()">&times;</span>
+			<h2>Pokedex</h2>
+		</div>
+		<!--display the pokemon-->
+		<div class="modal-body">
+			<div class="row">
+				<div class="col-sm-3" id="modalPokemon">
+					<img id="modalImg" src="">
+					<p id = "modalText">Some Text</p>
+				</div>
+				<div class="col-sm-9">
+					<h4></h4>
+					<p id = "pokeData"></p>
+				</div>
+			</div>
+		</div>
+		<!--move to the next or previous pokemon -->
+		<div class="modal-footer">
+			<h3></h3>
+			<button type="button" class="btn btn-danger" id = "prevBtn" onclick="prevBtnEvent()">Previous</button>
+			<button type="button" class="btn btn-danger" id = "nextBtn" onclick="nextBtnEvent()">Next</button>
+		</div>
+	</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/js/home.js"></script>
+<script type="text/javascript" src="assets/js/pokemonInfo.js"></script>
+<script> loadAllNames(); </script>
+<script type="text/javascript">
+	window.onclick = function(event) {
+	    if (event.target == $("#myModal")) {
+	        modal.style.display = "none";
+	    }
+	}
+</script>
+</body>
+</html>

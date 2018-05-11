@@ -1,0 +1,32 @@
+<!--
+	This is the landing page for the site.
+-->
+
+<% include partials/header %>
+
+<body onload="activateHome(); startInterval();">
+	
+	<% include partials/nav %>
+	<!-- Home tab -->
+	<div class = "cont-home container">
+		<div class = "row">
+			<div class ="col-lg-12">
+				<div class = "content">
+					<h1>Pokedex</h1>
+					<h3>Gotta Catch 'em all!</h3>
+					<% if (!currentUser) { %>
+						<h3>Login to get back to your adventure!</h3>
+					<% } else { %>
+						<h3>Go explore the wilderness!</h3>
+					<% } %>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id = "notif_bar" class="alert alert-danger alert-dismissable" style= "display: none;">
+    	<a id = "notif_close" class="close" style = "right: 1vw;" onclick = "closeNotif();" >×</a>
+    	Alert Goes Here
+  	</div>
+
+<% include partials/footer %>
